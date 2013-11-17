@@ -37,7 +37,7 @@ namespace MintScraper {
       using (var stream = response.GetResponseStream())
       using (var reader = new StreamReader(stream)) {
         homePageXml = reader.ReadToEnd();
-        // TODO: remove
+        // NOTE: uncomment the following line to trace mint.com changes on the home page
         //File.WriteAllText(@"c:\temp\mintHomePage.html", homePageXml);
       }
       response.Close();
@@ -77,7 +77,7 @@ namespace MintScraper {
 
       // download the JSON using the user token
       var json = GetBalanceJson(token);
-      // TODO: remove
+      // NOTE: uncomment the following line to trace mint.com changes in the balances JSON
       //File.WriteAllText(@"c:\temp\mintAccounts.json", json);
 
       // parse the JSON into account balance data
@@ -96,26 +96,6 @@ namespace MintScraper {
           LastUpdated = (new DateTime(1970, 1, 1)).AddMilliseconds((long)account["lastUpdated"]),
         });
       }
-
-      //var mint = XDocument.Parse(xml);
-      //var accounts = mint.Descendants(XName.Get("li", ns)).Where(e => GetSafeValue(e.Attribute("class")) == "account refreshing" || GetSafeValue(e.Attribute("class")) == "account");
-      //var balances = new List<AccountBalance>();
-      //foreach (var account in accounts) {
-      //  var lastUpdated = account.Descendants(XName.Get("span", ns)).Single(e => GetSafeValue(e.Attribute("class")) == "last-updated" && !string.IsNullOrWhiteSpace(e.Value)).Value;
-      //  var accountId = account.Attribute("id").Value.Substring(8);
-      //  var balance = Decimal.Parse(account.Descendants(XName.Get("span", ns)).Single(e => GetSafeValue(e.Attribute("class")) == "balance").Value.Replace("–", "-"), NumberStyles.Currency);
-      //  var institutionName = GetSafeValue(account.Descendants(XName.Get("a", ns)).SingleOrDefault(e => GetSafeValue(e.Attribute("class")) == ""));
-      //  var accountName = account.Descendants(XName.Get("h6", ns)).First().Value;
-      //  if (accountName.StartsWith(lastUpdated)) { accountName = accountName.Substring(lastUpdated.Length); }
-
-      //  balances.Add(new AccountBalance() {
-      //    AccountId = accountId,
-      //    Balance = balance,
-      //    InstitutionName = institutionName,
-      //    LastUpdated = lastUpdated,
-      //    AccountName = accountName,
-      //  });
-      //}
 
       // Render the balance data as CSV
       var context = new CsvContext();

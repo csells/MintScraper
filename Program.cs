@@ -1,5 +1,4 @@
 ﻿// Copyright (c) 2011-2013, Sells Brothers, Inc. All rights reserved. No warranty extended. Use at your own risk. Some assembly required. Void where prohibited. Batties not included. Keep calm and carry on.
-// TODO: next time check out wget, which supports https, logins and cookies
 
 using CommandLine;
 using CommandLine.Text;
