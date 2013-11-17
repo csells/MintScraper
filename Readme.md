@@ -45,7 +45,8 @@ the following:
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 11/16/2013 2:05:05 PM: Downloading mint.com transactions to MintTransactions.csv
-Downloaded 37 account balances as of 11/16/2013 Downloaded 9970 transactions from 3/13/2009 to 11/16/2013
+Downloaded 37 account balances as of 11/16/2013
+Downloaded 9970 transactions from 3/13/2009 to 11/16/2013
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
